@@ -16,15 +16,21 @@ while True:
             age = input('Введите возраст сотрудника: ')
             post = input('Введите должность сотрудника: ')
             salary = int(input('Введите зарплату сотрудника: '))
+            if len(data) == 0:
+                new_id = 1
+            else:
+                new_id = data[-1]['new_id'] + 1
             worker = {
-                name: 'name',
-                last_name: 'last_name',
-                age: 'age',
-                post: 'post',
-                salary: 'salary'
+                'new_id': new_id,
+                'name': name,
+                'last_name': last_name,
+                'age': age,
+                'post': post,
+                'salary': salary
             }
             data.append(worker)
             save_data(data)
+            
         
     except ValueError:
         print ('Произошла ошибка! Проверьте данные, которые вводите.')
