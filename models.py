@@ -10,3 +10,7 @@ class Work:
     def get_info(self):
         print(f'ID: {self.id} | Сотрудник: {self.name} {self.last_name} | Возраст: {self.age} | Должность: {self.post} | Зарпалата: {self.salary} ')
         
+    def bonus_sistem(self, bonus):
+        self.salary += bonus
+        print(f'Зарплата с учетом бонуса: {self.salary}')
+        
