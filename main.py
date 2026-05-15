@@ -60,6 +60,19 @@ while True:
                         user['salary']
                     )
                     worker.get_info()
+                    while True:
+                        print(f'Выберите действие: ')
+                        print(f'1. Добавить бонус')
+                        print(f'2. Добавить штраф')
+                        print(f'3. Узнать причину бонуса(ов)')
+                        print(f'4. Узначить причину штрафа(ов)')
+                        print(f'5. Посмотреть финальную выплату')
+                        print(f'6. Выйти')
+                        action = int(input('Выберите желаемое действие: '))
+                        
+                        if action == 6:
+                            break
+                    
                 else:
                     print(f'Сотрудник не найден.')
         
