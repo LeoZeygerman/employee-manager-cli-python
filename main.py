@@ -1,3 +1,4 @@
+from models import Work
 from storage import load_data, save_data
 while True:
     try:
@@ -31,6 +32,27 @@ while True:
             data.append(worker)
             save_data(data)
             
+        if choice == 2:
+            data = load_data()
+            employee = input('Введите id или имя/фамилию сотрудника: ')
+            for user in data:
+                if (
+                    str(user['new_id']) == employee
+                    or user['name'] == employee
+                    or user['last_name'] == employee
+                    or user['name'], user['last_name'] == employee
+                ):
+                    worker = Work(
+                        user['new_id'],
+                        user['name'],
+                        user['last_name'],
+                        user['age'],
+                        user['post'],
+                        user['salary']
+                    )
+                    worker.get_info()
+                else:
+                    print(f'Сотрудник не найден.')
         
     except ValueError:
         print ('Произошла ошибка! Проверьте данные, которые вводите.')
