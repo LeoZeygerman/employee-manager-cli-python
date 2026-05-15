@@ -70,6 +70,9 @@ while True:
                         print(f'6. Выйти')
                         action = int(input('Выберите желаемое действие: '))
                         
+                        if action == 1:
+                            pass
+                        
                         if action == 6:
                             break
                     
