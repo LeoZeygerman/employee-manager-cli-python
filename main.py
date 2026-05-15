@@ -31,6 +31,15 @@ while True:
             }
             data.append(worker)
             save_data(data)
+            worker_object = Work(
+                        worker['new_id'],
+                        worker['name'],
+                        worker['last_name'],
+                        worker['age'],
+                        worker['post'],
+                        worker['salary']
+                    )
+            worker_object.get_info()
             
         if choice == 2:
             data = load_data()
