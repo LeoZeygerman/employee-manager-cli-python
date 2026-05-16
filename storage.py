@@ -23,3 +23,14 @@ def load_bonus():
 def save_bonus(data):
     with open ('data/bonus.json', 'w') as f:
         json.dump(data, f)
+        
+def load_fine():
+    try:
+        with open('fine/bonus.json', 'r') as f:
+            return json.load(f)
+    except:
+        return[]
+    
+def save_fine(data):
+    with open ('data/fine.json', 'w') as f:
+        json.dump(data, f)

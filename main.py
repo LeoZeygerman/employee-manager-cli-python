@@ -1,5 +1,5 @@
 from models import Work
-from storage import load_data, save_data, load_bonus, save_bonus
+from storage import load_data, save_data, load_bonus, save_bonus, load_fine, save_fine
 while True:
     try:
         print('Варианты дейтсвий: ')
@@ -86,6 +86,20 @@ while True:
                             save_bonus(bonus_sis)
                             print('Бонус успешно добавлен.')
                             
+                        if action == 2:
+                            fine_sis = load_fine()
+                            reason = input('Напишите причину штрафа: ')
+                            fine = int(input('Введите сумму штрафа: '))
+                            user['salary'] -= fine
+                            save_data(data)
+                            info_fine = {
+                                'worker_id': user['new_id'],
+                                'reason': reason,
+                                'fine': fine
+                            }
+                            fine_sis.append(info_fine)
+                            save_fine(fine_sis)
+                            print('Штраф успешно добавлен.')
                         
                         if action == 6:
                             break
