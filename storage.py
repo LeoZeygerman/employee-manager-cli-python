@@ -26,7 +26,7 @@ def save_bonus(data):
         
 def load_fine():
     try:
-        with open('fine/bonus.json', 'r') as f:
+        with open('data/fine.json', 'r') as f:
             return json.load(f)
     except:
         return[]

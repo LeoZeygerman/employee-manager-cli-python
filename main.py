@@ -106,6 +106,12 @@ while True:
                             for bonus in bonuses:
                                 if bonus['worker_id'] == user['new_id']:
                                     print(f'ID: {bonus['worker_id']} | Причина: {bonus['reason']} | Сумма: {bonus['bonus']}')
+                                    
+                        if action == 4:
+                            fines = load_fine()
+                            for fine in fines:
+                                if fine['worker_id'] == user['new_id']:
+                                    print(f'ID: {fine['worker_id']} | Причина: {fine['reason']} | Сумма: {fine['fine']}')
                         
                         if action == 6:
                             break
