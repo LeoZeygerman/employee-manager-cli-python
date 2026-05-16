@@ -1,5 +1,5 @@
 class Work:
-    def __init__(self, id, name, last_name, age, post, salary):
+    def __init__(self, id, name, last_name, age, post, salary,):
         self.id = id
         self.name = name
         self.last_name = last_name

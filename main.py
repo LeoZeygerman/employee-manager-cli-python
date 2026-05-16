@@ -101,6 +101,12 @@ while True:
                             save_fine(fine_sis)
                             print('Штраф успешно добавлен.')
                         
+                        if action == 3:
+                            bonuses = load_bonus()
+                            for bonus in bonuses:
+                                if bonus['worker_id'] == user['new_id']:
+                                    print(f'ID: {bonus['worker_id']} | Причина: {bonus['reason']} | Сумма: {bonus['bonus']}')
+                        
                         if action == 6:
                             break
                     
