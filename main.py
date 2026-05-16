@@ -1,5 +1,5 @@
 from models import Work
-from storage import load_data, save_data
+from storage import load_data, save_data, load_bonus, save_bonus
 while True:
     try:
         print('Варианты дейтсвий: ')
@@ -60,6 +60,7 @@ while True:
                         user['salary']
                     )
                     worker.get_info()
+                    
                     while True:
                         print(f'Выберите действие: ')
                         print(f'1. Добавить бонус')
@@ -71,7 +72,20 @@ while True:
                         action = int(input('Выберите желаемое действие: '))
                         
                         if action == 1:
-                            pass
+                            bonus_sis = load_bonus()
+                            reason = input('Напишите причину бонуса: ')
+                            bonus = int(input('Введите сумму бонуса: '))
+                            user['salary'] += bonus
+                            save_data(data)
+                            info_bonus = {
+                                'worker_id': user['new_id'],
+                                'reason': reason,
+                                'bonus': bonus
+                            }
+                            bonus_sis.append(info_bonus)
+                            save_bonus(bonus_sis)
+                            print('Бонус успешно добавлен.')
+                            
                         
                         if action == 6:
                             break
