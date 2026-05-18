@@ -132,6 +132,21 @@ while True:
             for user in data:
                 print(f'ID: {user['new_id']} | Имя: {user['name']} | Фамилия: {user['last_name']} | Возраст: {user['age']} | Должность: {user['post']} | Зарплата: {user['salary']}')
         
+        if choice == 4:
+            data = load_data()
+            remove_user = input('Введите ID или имя сотрудника, кого хотите удалить: ')
+            found = False
+            for user in data:
+                if (
+                    str(user['new_id']) == remove_user
+                    or user['name'] == remove_user
+                ):
+                    found = True
+                    data.remove(user)
+                    save_data(data)
+                    print('Сотрудник удален.')
+                    break
+        
     except ValueError:
         print ('Произошла ошибка! Проверьте данные, которые вводите.')
         
