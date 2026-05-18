@@ -1,1 +1,1 @@
-[{"new_id": 1, "name": "Lev", "last_name": "Zey", "age": "17", "post": "Lead", "salary": 50}]
+[{"new_id": 1, "name": "Lev", "last_name": "Zey", "age": "17", "post": "Lead", "salary": -150}, {"new_id": 2, "name": "Ir", "last_name": "Zey", "age": "19", "post": "Lead2", "salary": 100}, {"new_id": 3, "name": "VOVA", "last_name": "VOVA", "age": "13", "post": "VOVA", "salary": 100000}]

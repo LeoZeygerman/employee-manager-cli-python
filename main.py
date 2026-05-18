@@ -44,13 +44,14 @@ while True:
         if choice == 2:
             data = load_data()
             employee = input('Введите id или имя/фамилию сотрудника: ')
+            found = False
             for user in data:
                 if (
                     str(user['new_id']) == employee
                     or user['name'] == employee
                     or user['last_name'] == employee
-                    or user['name'], user['last_name'] == employee
                 ):
+                    found = True
                     worker = Work(
                         user['new_id'],
                         user['name'],
@@ -112,12 +113,19 @@ while True:
                             for fine in fines:
                                 if fine['worker_id'] == user['new_id']:
                                     print(f'ID: {fine['worker_id']} | Причина: {fine['reason']} | Сумма: {fine['fine']}')
+                                    
+                        if action == 5:
+                            data = load_data()
+                            
+                            if worker.id == user['new_id']:
+                                print(f'Финальная выплата сотруднику {worker['name']} {worker['last_name']}: {worker['salary']}')
                         
                         if action == 6:
                             break
+                    break
                     
-                else:
-                    print(f'Сотрудник не найден.')
+            if not found:
+                print('Сотрудник не найден.')
         
     except ValueError:
         print ('Произошла ошибка! Проверьте данные, которые вводите.')
