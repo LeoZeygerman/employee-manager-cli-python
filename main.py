@@ -116,9 +116,9 @@ while True:
                                     
                         if action == 5:
                             data = load_data()
-                            
-                            if worker.id == user['new_id']:
-                                print(f'Финальная выплата сотруднику {worker['name']} {worker['last_name']}: {worker['salary']}')
+                            for user in data:
+                                if worker.id == user['new_id']:
+                                    print(f'Финальная выплата сотруднику {user['name']} {user['last_name']}: {user['salary']}')
                         
                         if action == 6:
                             break
@@ -126,6 +126,11 @@ while True:
                     
             if not found:
                 print('Сотрудник не найден.')
+                
+        if choice == 3:
+            data = load_data()
+            for user in data:
+                print(f'ID: {user['new_id']} | Имя: {user['name']} | Фамилия: {user['last_name']} | Возраст: {user['age']} | Должность: {user['post']} | Зарплата: {user['salary']}')
         
     except ValueError:
         print ('Произошла ошибка! Проверьте данные, которые вводите.')
