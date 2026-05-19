@@ -147,6 +147,10 @@ while True:
                     print('Сотрудник удален.')
                     break
         
+        if choice == 5:
+            print('Программа завершена.')
+            break
+        
     except ValueError:
         print ('Произошла ошибка! Проверьте данные, которые вводите.')
         
